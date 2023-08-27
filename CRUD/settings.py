@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-o8+^p_+y=^#!@u1%a=zadn+x6k3!ii@snuz)!qjfzwdftgay@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,11 +82,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'NkOup0mc2G66DxZcz5sG',
-        'HOST': 'containers-us-west-48.railway.app',
-        'PORT':'7588',
+        'PASSWORD': 'aqc0JlSmhCfxtD3lTWD3',
+        'HOST': 'containers-us-west-160.railway.app',
+        'PORT':'5972',
     }
 }
+
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
